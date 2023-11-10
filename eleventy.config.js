@@ -1,22 +1,19 @@
 module.exports = function (eleventyConfig) {
 
-    eleventyConfig.setServerOptions({
-        showAllHosts: true,
-    });
-
-    //eleventyConfig
-    //    .addPassthroughCopy({ "src/_11ty/_static/app/*.*": "/" })
-    //    .addPassthroughCopy({ "src/_11ty/_static/img/*.*": "/img" })
-    //    .addPassthroughCopy({ "src/_11ty/_static/favicon": "favicon" });
+// Show url in terminal output
+eleventyConfig.setServerOptions({
+    showAllHosts: true,
+});
 
 return {
-    templateFormats: [
-        "md",
-        "njk"
-    ],
+    // src Formats
+    templateFormats: [ "md", "njk", "html" ],
+
+    // Nunjucks  engine in .md & .html file
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
 
+    // Directory
     dir: {
         input: "./src/content/",
         includes: "../_11ty/_includes/",

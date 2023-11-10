@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    {{ content | safe }}
+<body class="w-screen h-screen grid bg-black">
+    <main class="max-w-prose  w-11/12 m-auto text-green-500 text-center font-mono">
+        {{ content | safe }}
+    </main>
+    <nav aria-labelledby="my-pagination"  class="text-green-500">
+    {% set navPages = collections.all | eleventyNavigation %}
+        <ul>
+        {%- for entry in navPages %}
+        <li {% if entry.url == page.url %} class="my-active-class"{% endif %}>
+            <a href="{{ entry.url }}">{{ entry.title }}</a>
+        </li>
+        {%- endfor %}
+        {%- for pageEntry in pagination.pages %}
+            <li><a href="{{ pagination.hrefs[ forloop.index0 ] }}"{% if page.url == pagination.hrefs[ forloop.index0 ] %} aria-current="page"{% endif %}>Page {{ forloop.index }}</a></li>
+        {%- endfor %}
+        </ul>
+    </nav>
 </body>
 </html>
