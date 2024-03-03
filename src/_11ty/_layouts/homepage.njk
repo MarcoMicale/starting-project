@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="{{ meta.lang }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="css/style.css">
+    {% include "head.njk" %}
 </head>
-<body class="w-screen h-screen grid bg-black">
-    <main class="max-w-prose  w-11/12 m-auto text-green-500 text-center font-mono">
+<body class="center">
+    <main class="content">
         {{ content | safe }}
     </main>
 </body>

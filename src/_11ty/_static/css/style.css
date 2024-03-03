@@ -1,0 +1,122 @@
+/*  */
+root {
+    --color: #f8fafc;
+    --bg: #111827;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* dark mode user-agent-styles */
+
+html {
+    color-scheme: dark light;
+    hyphens: auto;
+}
+
+/* min body height */
+
+body {
+    background-color: var(--bg);
+    min-height: 100dvh;
+    color: var(--color);
+    font-family: system-ui, sans-serif;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 0.75rem;
+}
+
+h1,
+h2,
+h3 {
+    text-wrap: balance;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: clamp(1.5rem, 4vw + 0.75rem, 3rem);
+    margin-bottom: 1.25rem;
+}
+
+h2 {
+    font-size: clamp(1.35rem, 3vw + 0.75rem, 2.6rem);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: clamp(1.2rem, 2vw + 0.75rem, 2.3em);
+    margin-bottom: 0.75rem;
+}
+
+p {
+    font-size: clamp(1.1rem, 1vw + 0.75rem, 2rem);
+    font-weight: 400;
+    line-height: 1.4;
+    text-wrap: pretty;
+    display: block;
+    max-width: 100ch;
+}
+
+p + p {
+    margin-top: 0.5rem;
+}
+
+.content {
+    --max-content-width: 80ch;
+    --breakout-difference: 0.2;
+    /*  Compute total allowed grid width to `--breakout-difference` larger than content area  */
+    --breakout-grid-width: calc( var(--max-content-width) + (var(--max-content-width) * var(--breakout-difference)) );
+
+    display: grid;
+    grid-template-columns:
+        [grid-start] 1fr
+        [content-start] minmax(
+            min(100%, var(--max-content-width)),
+            1fr
+        )
+        [content-end] 1fr
+        [grid-end];
+    width: min(100% - 2rem, var(--breakout-grid-width));
+    row-gap:1rem;
+    margin-inline: auto;
+}
+
+.content > *:not(.breakout) {
+    grid-column: content;
+}
+
+.content > .breakout {
+    grid-column: grid;
+    background-color: (var(--color));
+    color: (var(--bg));
+}
+
+.center {
+    display: grid;
+    place-content: center;
+}

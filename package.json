@@ -1,17 +1,12 @@
 {
   "name": "starting-project",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A solid, pre-packaged starting point to speed up the creation process",
   "main": "README.md",
   "scripts": {
-    "go!": "run-p build:*",
-    "dev": "run-p delete:public serve:*",
-    "build:tailwind": "npx tailwindcss -i ./src/_11ty/_static/css/input.css  -o ./public/css/style.css --minify",
-    "build:11ty": "npx @11ty/eleventy --incremental",
-    "serve:tailwind": "npx tailwindcss -i ./src/_11ty/_static/css/input.css  -o ./public/css/style.css --watch",
-    "serve:11ty": "npx @11ty/eleventy --serve --watch",
-    "delete:public": "rimraf public",
-    "i": "npm install && npm install -g npm-check-updates",
+    "go!": "npx @11ty/eleventy --incremental",
+    "dev": "rimraf public && npx @11ty/eleventy --serve --watch",
+    "instal": "npm install && npm install -g npm-check-updates",
     "upgrade": "ncu --upgrade && npm install"
   },
   "repository": {
@@ -20,7 +15,8 @@
   },
   "keywords": [
     "11ty",
-    "tailwindcss",
+    "css",
+    "md",
     "html"
   ],
   "author": "Marco Micale",
@@ -31,8 +27,8 @@
   "homepage": "https://github.com/MarcoMicale/starting-project#readme",
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "npm-run-all": "^4.1.5",
-    "rimraf": "^5.0.0",
-    "tailwindcss": "^3.3.5"
+    "markdown-it": "^14.0.0",
+    "markdown-it-attrs": "^4.1.6",
+    "rimraf": "^5.0.5"
   }
 }

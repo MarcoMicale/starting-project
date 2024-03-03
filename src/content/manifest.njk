@@ -1,0 +1,44 @@
+---
+permalink: site.webmanifest
+eleventyExcludeFromCollections: true
+---
+{
+    "dir": "ltr",
+    "name": "{{ meta.siteName | safe }}",
+    "short_name": "{{ meta.shortName | safe }}",
+    "description": "{{ meta.siteDescription | safe }}",
+    "lang": "{{ meta.lang }}",
+    "id": "/",
+    "start_url": "/",
+    "display": "standalone",
+    "display_override": ["fullscreen", "minimal-ui"],
+    "orientation": "portrait",
+    "theme_color": "{{ meta.themeColor }}",
+    "background_color": "{{ meta.backgroundColor }}",
+    "scope": "/",
+    "icons": [
+        {
+            "src": "/favicon/android-chrome-256x256.png",
+            "sizes":"256x256",
+            "type":"image/png"
+        },
+        {
+            "src": "/favicon/android-chrome-192x192.png",
+            "sizes": "192x192", "type": "image/png"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/img/screenshot1.png",
+            "type": "image/png",
+            "sizes": "540x720",
+            "form_factor": "narrow"
+        },
+        {
+            "src": "/img/screenshot2.png",
+            "type": "image/png",
+            "sizes": "720x540",
+            "form_factor":"wide"
+        }
+    ]
+}
