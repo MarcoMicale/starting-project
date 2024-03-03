@@ -6,6 +6,14 @@
 <body class="center">
     <main class="content">
         {{ content | safe }}
+        <section>
+            <label>Theme:
+                <select data-theme-picker name="themepicker" id="theme">
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                </select>
+            </label>
+        </section>
     </main>
 </body>
 </html>

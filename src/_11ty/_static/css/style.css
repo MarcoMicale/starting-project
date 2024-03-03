@@ -1,9 +1,32 @@
 /*  */
-root {
+:root {
     --color: #f8fafc;
     --bg: #111827;
 }
 
+@media (prefers-color-scheme:light) {
+    :root {
+        --color: #11182c;
+        --bg: #f8fafc;
+    }
+}
+
+html {
+    color-scheme: dark light;
+    hyphens: auto;
+}
+
+:root:has(#theme [value="light"]:checked) {
+    color-scheme: light;
+    --color: #11182c;
+    --bg: #f8fafc;
+}
+
+:root:has(#theme [value="dark"]:checked) {
+    color-scheme: dark;
+    --color: #f8fafc;
+     --bg: #111827;
+    }
 
 *,
 *::before,
@@ -20,12 +43,6 @@ root {
     font: inherit;
 }
 
-/* dark mode user-agent-styles */
-
-html {
-    color-scheme: dark light;
-    hyphens: auto;
-}
 
 /* min body height */
 
@@ -33,7 +50,11 @@ body {
     background-color: var(--bg);
     min-height: 100dvh;
     color: var(--color);
+    font-size: clamp(1rem, 1vw + 0.5rem, 2rem);
+    font-weight: 400;
+    line-height: 1.4;
     font-family: system-ui, sans-serif;
+    accent-color: var(--bg);
 }
 
 /* responsive images/videos */
@@ -86,8 +107,12 @@ p + p {
     margin-top: 0.5rem;
 }
 
+select {
+    background-color: var(--bg);
+}
+
 .content {
-    --max-content-width: 80ch;
+    --max-content-width: 70ch;
     --breakout-difference: 0.2;
     /*  Compute total allowed grid width to `--breakout-difference` larger than content area  */
     --breakout-grid-width: calc( var(--max-content-width) + (var(--max-content-width) * var(--breakout-difference)) );
@@ -102,7 +127,7 @@ p + p {
         [content-end] 1fr
         [grid-end];
     width: min(100% - 2rem, var(--breakout-grid-width));
-    row-gap:1rem;
+    row-gap:2rem;
     margin-inline: auto;
 }
 
