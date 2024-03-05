@@ -1,7 +1,7 @@
 {
   "name": "starting-project",
   "version": "0.0.2",
-  "description": "A solid, pre-packaged starting point to speed up the creation process",
+  "description": "A solid 11ty starting point to speed up the creation process",
   "main": "README.md",
   "scripts": {
     "go!": "npx @11ty/eleventy --incremental",

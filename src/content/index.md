@@ -1,6 +1,6 @@
 ---
 title: Starting Project
-description: A solid, pre-packaged 11ty starting point to speed up the creation process
+description: A solid 11ty starting point to speed up the creation process
 keyword: 11ty, css, html, md
 layout: homepage.njk
 permalink: index.html
