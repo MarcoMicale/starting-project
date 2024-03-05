@@ -9,6 +9,6 @@ module.exports = {
 	creationDate: '03/03/2024', // change this data
 	url: process.env.URL || 'https://marcomicale.eu',
 	robots: 'index',
-	themeColor: '#ffffff', // change this color
-	backgroundColor: '#ffffff', // change this color
+	themeColor: '#f8fafc', // change this color
+	backgroundColor: '#11182c', // change this color
 };

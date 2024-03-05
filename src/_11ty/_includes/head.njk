@@ -11,14 +11,22 @@
 <link rel="preload" href="{{ '/css/style.css' | url }}" as="style">
 <link rel="stylesheet" href="{{ '/css/style.css' | url }}" media="all">
 
+<!-- Sitemap -->
+<link rel="sitemap"
+        type="application/rss+xml"
+        title="Sitemap for {{meta.siteName}}"
+        href="{{ '//sitemap.xml' | url }}" />
+
 <!-- Favicon -->
+<link rel="shortcut icon" href="{{ '/favicon/favicon.ico' | url }} " sizes="any" />
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/favicon/apple-touch-icon.png ' | url }}" />
+<link rel="icon" type="image/svg+xml" href="{{ '/favicon/safari-pinned-tab.svg' | url }}" />
 <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon/favicon-32x32.png ' | url }}" />
 <link rel="icon" type="image/png" sizes="194x194" href="{{ '/favicon/favicon-194x194.png ' | url }}" />
 <link rel="icon" type="image/png" sizes="192x192" href="{{ '/favicon/android-chrome-192x192.png ' | url }}" />
 <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon/favicon-16x16.png ' | url }}" />
 <link rel="manifest" href="{{ '/site.webmanifest' | url }}" />
-<link rel="mask-icon" href="{{ '/favicon/safari-pinned-tab.svg' | url }}" color="#0584a8" />
+<link rel="mask-icon" href="{{ '/favicon/safari-pinned-tab.svg' | url }}" color=""{{ meta.backgroundColor }}" />
 <link rel="shortcut icon" href="{{ '/favicon/favicon.ico' | url }}" />
 <meta name="apple-mobile-web-app-title" content="{{ meta.siteName }}" />
 <meta name="application-name" content="{{ meta.siteName }}" />
