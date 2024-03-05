@@ -15,16 +15,24 @@ eleventyExcludeFromCollections: true
     "orientation": "portrait",
     "theme_color": "{{ meta.themeColor }}",
     "background_color": "{{ meta.backgroundColor }}",
+    "prefer_related_applications": false,
     "scope": "/",
     "icons": [
         {
             "src": "/favicon/android-chrome-256x256.png",
             "sizes":"256x256",
-            "type":"image/png"
+            "type":"image/png",
+            "purpose": "maskable"
         },
         {
             "src": "/favicon/android-chrome-192x192.png",
-            "sizes": "192x192", "type": "image/png"
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon/android-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
         }
     ],
     "screenshots": [

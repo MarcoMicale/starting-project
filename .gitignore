@@ -1,6 +1,10 @@
 # Directory
 public
 
+# SCSS result
+src/_11ty/_static/*.css
+src/_11ty/_static/*.css.map
+
 # Logs
 logs
 *.log

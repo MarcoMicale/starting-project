@@ -34,7 +34,7 @@ module.exports = function (eleventyConfig) {
         linkify: true
     })
     .use(markdownItAttrs)
-    eleventyConfig.setLibrary('md', markdownLib)
+    eleventyConfig.setLibrary('md', markdownLib);
 
     // Do not change the following lines, it is not necessary
     return {
@@ -55,4 +55,4 @@ module.exports = function (eleventyConfig) {
             },
     };
 
-};
+}
