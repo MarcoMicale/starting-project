@@ -18,6 +18,7 @@ module.exports = function (eleventyConfig) {
 
     // Copia alcuni file statici
     eleventyConfig
+    .addPassthroughCopy({ "src/_11ty/_static/pwa/*.*": "/" })
         .addPassthroughCopy({ "src/_11ty/_static/css": "css" })
         .addPassthroughCopy({ "src/_11ty/_static/icon": "favicon" })
         .addPassthroughCopy({ "src/_11ty/_static/images": "img" });

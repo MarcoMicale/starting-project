@@ -1,0 +1,12 @@
+---
+title: Errore {{ error.number }}
+description: Pagina di Errore {{ error.number }}. Spiacenti ma la pagina che stavi cercando ha restituito l'errore {{ error.number }}. Prova a visitare la pagina {{ meta.url }}/index.html
+layout: homepage.njk
+keyword: error {{ error.number }}
+permalink: "/{{ error.number }}.html"
+eleventyExcludeFromCollections: true
+pagination:
+    data: error-pages
+    size: 1
+    alias: error
+---

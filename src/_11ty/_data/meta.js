@@ -6,8 +6,8 @@ module.exports = {
 	authorName: 'Marco Micale',
 	siteDescription: 'A solid, pre-packaged 11ty starting point to speed up the creation process', // change this data
 	sitekeyword: '11ty, htm, css, md', // change this data
-	creationDate: '06/02/2024', // change this data
-	url: process.env.URL || 'https://frattura.marcomicale.eu',
+	creationDate: '03/03/2024', // change this data
+	url: process.env.URL || 'https://marcomicale.eu',
 	robots: 'index',
 	themeColor: '#ffffff', // change this color
 	backgroundColor: '#ffffff', // change this color
