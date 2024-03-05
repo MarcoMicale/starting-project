@@ -23,6 +23,7 @@ module.exports = function (eleventyConfig) {
         .addPassthroughCopy({ "src/_11ty/_static/images": "img" });
 
     // Copyright shortcode
+    // La mia firma ;-)
     eleventyConfig.addShortcode("copy", () => `&#169;&nbsp;${new Date().getFullYear()}&nbsp;Marco&nbsp;Micale`);
 
     // Set the markdown configuration in 11ty
