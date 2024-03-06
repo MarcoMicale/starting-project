@@ -1,14 +1,17 @@
 // Website Meta
 module.exports = {
 	lang: 'it',
-	siteName: 'Starting Project', // change this data
-	shortName: 'New', // change this data
-	authorName: 'Marco Micale',
-	siteDescription: 'A solid 11ty starting point to speed up the creation process', // change this data
-	sitekeyword: '11ty, htm, css, md', // change this data
+	locale: 'it-IT',
+	site: 'Starting Project', // change this data
+	description: 'A solid 11ty starting point to speed up the creation process', // change this data
+	keyword: '11ty, htm, css, md', // change this data
 	creationDate: '03/03/2024', // change this data
-	url: process.env.URL || 'https://marcomicale.eu',
-	robots: 'index',
+	author: 'Marco Micale',
+	mail: 'marcomicale@gmail.com',
+	robots: 'index, follow',
+	shortName: 'New', // change this data
 	themeColor: '#f8fafc', // change this color
 	backgroundColor: '#11182c', // change this color
+	url: process.env.URL || 'https://marcomicale.eu', // change this data
+	twitter: 'MarcoMicale',
 };

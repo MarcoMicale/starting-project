@@ -1,25 +1,39 @@
+<!-- Better meta -->
+{%- set pageTitle %}{% if title %}{{ title }} | {% endif %}{{ meta.site }}{% endset -%}
+{%- set pageDescription %}{% if description %}{{ description }}{% else %}{{ meta.siteDescription }}{% endif %}{% endset -%}
+{%- set pageKeyword %}{% if keyword %}{{ keyword }}{% else %}{{ meta.keyword }}{% endif %}{% endset -%}
+
 <meta charset="UTF-8" />
+<meta name="charset" content="iso-8859-1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>{{ meta.siteName }}</title>
-<meta name="description" content="{{ meta.siteDescription }}" />
-<meta name="keywords" content="{{ meta.sitekeyword }}" />
+
+<title>{{ pageTitle }}</title>
+
+<!-- La mia firma 😁 -->
+<meta name="author" content="{{ meta.author }}" />
+<meta name="contact" content="{{ meta.mail }}" />
+
+<!-- About  Page -->
+<meta name="description" content="{{ pageDescription }}" />
+<meta name="keywords" content="{{ pageKeyword }}" />
 <meta name="creation_Date" content="{{ meta.creationDate }}" />
+
+<!-- Robot -->
 <meta name="robots" content="{{ meta.robots }}" />
-<meta name="author" content="{{ meta.authorName }}" />
+<meta name="revisit-after" content="30 days" />
 
 <!-- Style -->
-<link rel="preload" href="{{ '/css/style.css' | url }}" as="style">
-<link rel="stylesheet" href="{{ '/css/style.css' | url }}" media="all">
+<link rel="preload" href="{{ '/css/style.css' | url }}" as="style" />
+<link rel="stylesheet" href="{{ '/css/style.css' | url }}" media="all" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 
 <!-- Sitemap -->
-<link rel="sitemap"
-        type="application/rss+xml"
-        title="Sitemap for {{meta.siteName}}"
-        href="{{ '//sitemap.xml' | url }}" />
+<link rel="sitemap" type="application/rss+xml" title="Sitemap di {{ meta.site }}"  href="{{ '//sitemap.xml' | url }}" />
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="{{ '/favicon/favicon.ico' | url }}" sizes="any" />
@@ -30,10 +44,10 @@
 <link rel="icon" type="image/png" sizes="192x192" href="{{ '/favicon/android-chrome-192x192.png ' | url }}" />
 <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon/favicon-16x16.png ' | url }}" />
 <link rel="manifest" href="{{ '/site.webmanifest' | url }}" />
-<link rel="mask-icon" href="{{ '/favicon/safari-pinned-tab.svg' | url }}" color=""{{ meta.backgroundColor }}" />
+<link rel="mask-icon" href="{{ '/favicon/safari-pinned-tab.svg' | url }}" color="{{ meta.backgroundColor }}" />
 <link rel="shortcut icon" href="{{ '/favicon/favicon.ico' | url }}" />
-<meta name="apple-mobile-web-app-title" content="{{ meta.siteName }}" />
-<meta name="application-name" content="{{ meta.siteName }}" />
+<meta name="apple-mobile-web-app-title" content="{{ meta.site }}" />
+<meta name="application-name" content="{{ meta.site }}" />
 <meta name="msapplication-TileColor" content="{{ meta.backgroundColor }}" />
 <meta name="msapplication-TileImage" content="{{ '/favicon/mstile-144x144.png' | url }}" />
 <meta name="msapplication-config" content="{{ '/favicon/browserconfig.xml' | url }}" />
@@ -45,3 +59,24 @@
         if ("serviceWorker" in navigator)
                 navigator.serviceWorker.register("/sw.js");
 </script>
+
+<!-- Open Graph -->
+<meta property="og:locale" content="{{ meta.locale }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ meta.url }}" />
+<meta property="og:title" content="{{ pageTitle }}" />
+<meta property="og:description" content="{{ pageDescription }}" />
+<meta property="og:image" content="https://v1.screenshot.11ty.dev/https%3A%2F%2Fmarcomicale.eu/opengraph/" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="{{ meta.url }}" />
+<meta property="twitter:domain" content="marcomicale.eu" />
+<meta name="twitter:title" content="{{ pageTitle }}" />
+<meta name="twitter:description" content="{{ pageDescription }}" />
+<meta name="twitter:site" content="@{{ meta.twitter }}" />
+<meta name="twitter:creator" content="@{{ meta.twitter }}" />
+<meta name="twitter:image:src" content="https://v1.screenshot.11ty.dev/https%3A%2F%2Fmarcomicale.eu/opengraph/" />
+<meta name="twitter:image:alt" content="{{ meta.site }} Screenshot" />

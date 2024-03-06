@@ -4,6 +4,7 @@ const markdownIt = require('markdown-it')
 // https://github.com/arve0/markdown-it-attrs?tab=readme-ov-file#examples
 const markdownItAttrs = require('markdown-it-attrs')
 
+// 11ty Setting
 module.exports = function (eleventyConfig) {
 
     // Show url in terminal output
@@ -23,8 +24,8 @@ module.exports = function (eleventyConfig) {
         .addPassthroughCopy({ "src/_11ty/_static/icon": "favicon" })
         .addPassthroughCopy({ "src/_11ty/_static/images": "img" });
 
+    // La mia firma 😁
     // Copyright shortcode
-    // La mia firma ;-)
     eleventyConfig.addShortcode("copy", () => `&#169;&nbsp;${new Date().getFullYear()}&nbsp;Marco&nbsp;Micale`);
 
     // Set the markdown configuration in 11ty
