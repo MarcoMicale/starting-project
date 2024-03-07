@@ -26,7 +26,12 @@ module.exports = function (eleventyConfig) {
 
     // La mia firma 😁
     // Copyright shortcode
-    eleventyConfig.addShortcode("copy", () => `&#169;&nbsp;${new Date().getFullYear()}&nbsp;Marco&nbsp;Micale`);
+    eleventyConfig.addShortcode("copy", async () => `&#169;&nbsp;${new Date().getFullYear()}&nbsp;Marco&nbsp;Micale`);
+
+    eleventyConfig.addFilter('encode', function(url) {
+        return url
+            .replace('://', '%3A%2F%2F');
+    });
 
     // Set the markdown configuration in 11ty
     const markdownLib = markdownIt({

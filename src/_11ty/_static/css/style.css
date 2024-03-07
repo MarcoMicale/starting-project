@@ -65,7 +65,7 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.35;
   accent-color: var(--bg2);
   transition:
     color var(--duration) var(--timing),
@@ -78,7 +78,7 @@ body {
   text-decoration-color: var(--color);
   text-decoration: underline;
   text-decoration-style: solid;
-  text-decoration-thickness: 0.06em;
+  text-decoration-thickness: 0.08em;
   }
 
 /* responsive images/videos */
@@ -137,13 +137,13 @@ select:focus-visible {
   transition: outline var(--duration) var(--timing);
 }
 .content {
-  --max-content-width: 54ch;
+  --max-content-width: 50ch;
   --breakout-difference:0.25;
   /*  Compute total allowed grid width to `--breakout-difference` larger than content area  */
   --breakout-grid-width: calc( var(--max-content-width) + (var(--max-content-width) * var(--breakout-difference)) );
   display: grid;
   grid-template-columns: [grid-start] 1fr [content-start] minmax(min(100%, var(--max-content-width)), 1fr) [content-end] 1fr [grid-end];
-  width: min(100% - calc(2 * var(--gap)), var(--breakout-grid-width));
+  width: min(100% - calc(2.75 * var(--gap)), var(--breakout-grid-width));
   row-gap: var(--gap);
   margin-inline: auto;
 }

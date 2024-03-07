@@ -10,7 +10,7 @@ permalink: index.html
 
 ## {{ description }}
 
-### Id tempore beatae dolorum
+<!-- ### {{ description }} -->
 
 Lorem ipsum dolor sit, amet consectetur adipisicing elit. At reprehenderit quos magnam tempore nobis iste quod, velit excepturi dolorum illum dolor illo iure nisi nulla recusandae vel, saepe aliquam atque!
 
