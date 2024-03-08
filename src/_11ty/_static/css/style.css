@@ -3,42 +3,15 @@
   --font: "Montserrat", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --duration: 0.6s;
   --timing: ease-in-out;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color: #f1f5f9;
-    --bg: #111827;
-    --bg2: #1f2937;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --color: #11182c;
-    --bg: #f1f5f9;
-    --bg2: #e2e8f0;
-  }
-}
-
-html {
-  color-scheme: light dark;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-}
-
-:root:has(#theme [value=dark]:checked) {
-  color-scheme: dark;
-  --color: #f1f5f9;
-  --bg: #111827;
-  --bg2: #1f2937;
-}
-
-:root:has(#theme [value=light]:checked) {
-  color-scheme: light;
   --color: #11182c;
   --bg: #f1f5f9;
   --bg2: #e2e8f0;
+}
+
+html {
+  color-scheme: light;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 *,
@@ -162,9 +135,86 @@ select:focus-visible {
 }
 
 footer {
+  border-top: 1px solid var(--bg2);
+  padding-top: var(--gap);
   -webkit-user-select: none;
   user-select: none;
-  padding-top: var(--gap);
-  border-top: 1px solid var(--bg2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: var(--gap);
+  column-gap: calc(3 * var(--gap));
   transition: border var(--duration) var(--timing);
 }
+
+
+dark-mode-toggle.slider::part(toggleLabel) {
+  --icon-size: calc(clamp(1.15rem, 1vw + 0.5rem, 2.5rem) / 2);
+    display: inline-block;
+    position: relative;
+    height: calc(var(--icon-size, 1rem) * 2);
+    width: calc(var(--icon-size, 1rem) * 3.8);
+    background-color: var(--color);
+    border-radius: var(--icon-size, 1rem);
+    transition: var(--timing);
+  }
+
+  dark-mode-toggle.slider[mode='dark']::part(toggleLabel) {
+    background-color: var(--color);
+  }
+
+  dark-mode-toggle.slider::part(toggleLabel)::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: calc(var(--icon-size, 1rem) * 0.25);
+    left: calc(var(--icon-size, 1rem) * 0.25);
+    height: calc(var(--icon-size, 1rem) * 1.5);
+    width: calc(var(--icon-size, 1rem) * 1.5);
+    border-radius: 100%;
+    background-color: var(--bg);
+    color: var(--color);
+    transition:var(--timing);
+    content: '';
+    background-position: center;
+    background-size: var(--icon-size, 1rem);
+    background-image: none;
+    box-sizing: border-box;
+  }
+
+  dark-mode-toggle.slider[mode='dark']::part(toggleLabel)::before {
+    left: calc(100% - var(--icon-size, 1rem) * 1.75);
+    border-color: var(--bg2);
+    background-color: var(--color);
+    color: var(--bg2);
+    background-size: var(--icon-size, 1rem);
+    background-image:none;
+    filter: var(--dark-mode-toggle-icon-filter, invert(100%));
+  }
+
+  dark-mode-toggle.slider::part(toggleLabel)::after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: calc(var(--icon-size, 1rem) * 0.25);
+    left: calc(100% - var(--icon-size, 1rem) * 1.75);
+    height: calc(var(--icon-size, 1rem) * 1.5);
+    width: calc(var(--icon-size, 1rem) * 1.5);
+    border-radius: 100%;
+    color: var(--color);
+    content: '';
+    background-position: center;
+    background-size: var(--icon-size, 1rem);
+    background-image: none;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    opacity: 0.5;
+  }
+
+  dark-mode-toggle.slider[mode='dark']::part(toggleLabel)::after {
+    left: calc(var(--icon-size, 1rem) * 0.25);
+    filter: var(--dark-mode-toggle-icon-filter, invert(100%));
+  }

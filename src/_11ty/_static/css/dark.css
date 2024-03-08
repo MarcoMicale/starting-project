@@ -1,0 +1,11 @@
+@media (prefers-color-scheme: dark) {
+  :root{
+    --color: #f1f5f9;
+    --bg: #111827;
+    --bg2: #1f2937;
+  }
+}
+
+html {
+  color-scheme: dark;
+}

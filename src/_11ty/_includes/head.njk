@@ -28,6 +28,7 @@
 <!-- Style -->
 <link rel="preload" href="{{ '/css/style.css' | url }}" as="style" />
 <link rel="stylesheet" href="{{ '/css/style.css' | url }}" media="all" />
+<link rel="stylesheet" href="{{ '/css/dark.css' | url }}" media="(prefers-color-scheme: dark)" />
 
 <!-- Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -82,3 +83,6 @@
 <meta name="twitter:creator" content="@{{ meta.twitter }}" />
 <meta name="twitter:image:src" content="https://v1.screenshot.11ty.dev/{{ meta.url | encode }}/opengraph/" />
 <meta name="twitter:image:alt" content="{{ meta.site }} Screenshot" />
+
+<!-- Dark mode button -->
+<script type="module" src="https://unpkg.com/dark-mode-toggle"></script>

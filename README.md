@@ -10,7 +10,8 @@ A solid, pre-packaged 11ty starting point to speed up the creation process
 
 ## Work in progress
 
-- Social img
+- Dark-Light toggle ✅
+- Social img ✅
 - Favicon ✅
 - SEO ✅
 - Error page ✅

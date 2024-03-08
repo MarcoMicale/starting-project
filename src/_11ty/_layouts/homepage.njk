@@ -6,15 +6,8 @@
 <body class="center">
     <main class="content">
         {{ content | safe }}
-        <footer>
-            <label>Tema:&nbsp;
-                <select data-theme-picker name="themepicker" id="theme">
-                    <option value="system">System</option>
-                    <option value="dark">Notte 🌒</option>
-                    <option value="light">Giorno ☀️</option>
-                </select>
-            </label>
-        </footer>
+
+        {% include "footer.njk" %}
     </main>
 </body>
 </html>
