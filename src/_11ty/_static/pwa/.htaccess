@@ -27,6 +27,10 @@ ErrorDocument 500 /500.html
     deny from all
 </Files>
 
+<Files ~ "\.*$">
+Header set X-Robots-Tag "all"
+</Files>
+
 Options All -Indexes
 
 AddOutputFilterByType DEFLATE text/plain

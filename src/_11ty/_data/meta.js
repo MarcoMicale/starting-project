@@ -8,7 +8,7 @@ module.exports = {
 	creationDate: '03/03/2024', // change this data
 	author: 'Marco Micale',
 	mail: 'marcomicale@gmail.com',
-	robots: 'index, follow',
+	robots: 'all',
 	shortName: 'New', // change this data
 	themeColor: '#f8fafc', // change this color
 	backgroundColor: '#11182c', // change this color
