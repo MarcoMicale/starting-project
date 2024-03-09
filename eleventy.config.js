@@ -4,6 +4,8 @@ const markdownIt = require('markdown-it')
 // https://github.com/arve0/markdown-it-attrs?tab=readme-ov-file#examples
 const markdownItAttrs = require('markdown-it-attrs')
 
+const htmlmin = require("html-minifier");
+
 // 11ty Setting
 module.exports = function (eleventyConfig) {
 
@@ -41,6 +43,19 @@ module.exports = function (eleventyConfig) {
     })
     .use(markdownItAttrs)
     eleventyConfig.setLibrary('md', markdownLib);
+
+    eleventyConfig.addTransform("htmlmin", function(content) {
+        // Prior to Eleventy 2.0: use this.outputPath instead
+        if( this.page.outputPath && this.page.outputPath.endsWith(".html") ) {
+            let minified = htmlmin.minify(content, {
+                useShortDoctype: true,
+                removeComments: true,
+                collapseWhitespace: true
+            });
+            return minified;
+        }
+        return content;
+    });
 
     // Do not change the following lines, it is not necessary
     return {
