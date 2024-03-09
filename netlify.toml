@@ -7,4 +7,3 @@
   for = "/*"
   [headers.values]
     X-Robots-Tag = "allow"
-    Cache-Control = "max-age=300, public"

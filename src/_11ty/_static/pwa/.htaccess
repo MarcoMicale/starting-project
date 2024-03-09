@@ -5,7 +5,7 @@ AddDefaultCharset ISO-8859-1
 
 DirectoryIndex index.html
 
-Header set Cache-Control "max-age=300, public"
+Header set Cache-Control "max-age=31536000, public, must-revalidate"
 
 Header set Content-Security-Policy "default-src self"
 Header always set Content-Security-Policy "upgrade-insecure-requests;"
@@ -43,8 +43,8 @@ AddOutputFilterByType DEFLATE application/rss+xml
 AddOutputFilterByType DEFLATE application/javascript
 AddOutputFilterByType DEFLATE application/x-javascript
 
-<FilesMatch ".(css|flv|gif|jpg|jpeg|png|ico|swf|webp|avif|js|css|pdf|txt|html|htm|xml)$">
-    Header set Cache-Control "max-age=43200, public"
+<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|webp|avif|js|css|pdf|txt|html|htm|xml)$">
+    Header set Cache-Control "max-age=31536000, public, must-revalidate"
 </FilesMatch>
 
 <FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
