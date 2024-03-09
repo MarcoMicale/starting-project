@@ -27,7 +27,7 @@ ErrorDocument 500 /500.html
     deny from all
 </Files>
 
-<Files ~ "\.*$">
+<Files ~ "\.html$">
 Header set X-Robots-Tag "all"
 </Files>
 
@@ -43,8 +43,8 @@ AddOutputFilterByType DEFLATE application/rss+xml
 AddOutputFilterByType DEFLATE application/javascript
 AddOutputFilterByType DEFLATE application/x-javascript
 
-<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|webp|avif|js|css|pdf|txt|html|htm|xml)$">
-    Header set Cache-Control "max-age=43200"
+<FilesMatch ".(css|flv|gif|jpg|jpeg|png|ico|swf|webp|avif|js|css|pdf|txt|html|htm|xml)$">
+    Header set Cache-Control "max-age=43200, public"
 </FilesMatch>
 
 <FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">

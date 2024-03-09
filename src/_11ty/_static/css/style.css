@@ -1,6 +1,6 @@
 :root {
   --gap: clamp(0.5rem, 1vw + 0.5rem, 1.5rem);
-  --font: "Montserrat", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font: "Montserrat", ;
   --duration: 0.6s;
   --timing: ease-in-out;
   --color: #11182c;
@@ -33,12 +33,12 @@ body {
   background-color: var(--bg);
   min-height: 100dvh;
   color: var(--color);
-  font-family: var(--font);
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: clamp(1.15rem, 1vw + 0.5rem, 2.5rem);
   font-optical-sizing: auto;
   font-style: normal;
-  font-weight: 500;
-  line-height: 1.35;
+  font-weight: 400;
+  line-height: 1.4;
   accent-color: var(--bg2);
   transition:
     color var(--duration) var(--timing),
@@ -72,15 +72,16 @@ h1,
 h2,
 h3 {
   text-wrap: balance;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.025em;
+  font-family: var(--font) ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 h1 {
   font-size: clamp(2.35rem, 4vw + 0.5rem, 4.85rem);
   padding-bottom: clamp(0.75rem, 1vw, 1.25rem);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h2 {
@@ -110,7 +111,7 @@ select:focus-visible {
   transition: outline var(--duration) var(--timing);
 }
 .content {
-  --max-content-width: 50ch;
+  --max-content-width: 60ch;
   --breakout-difference:0.25;
   /*  Compute total allowed grid width to `--breakout-difference` larger than content area  */
   --breakout-grid-width: calc( var(--max-content-width) + (var(--max-content-width) * var(--breakout-difference)) );
