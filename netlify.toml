@@ -2,7 +2,8 @@
   base = ""
   publish = "public"
   command = "npm run go!"
+
 [[header]]
-  for = “/public/*”
+  for = "/*"
     [headers.values]
     X-Robots-Tag = “allow”
