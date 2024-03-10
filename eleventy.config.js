@@ -5,6 +5,7 @@ const markdownIt = require('markdown-it')
 const markdownItAttrs = require('markdown-it-attrs')
 
 const htmlmin = require("html-minifier");
+const pluginPWA = require("eleventy-plugin-pwa-v2");
 
 // 11ty Setting
 module.exports = function (eleventyConfig) {
@@ -55,6 +56,37 @@ module.exports = function (eleventyConfig) {
             return minified;
         }
         return content;
+    });
+
+    // PWA app
+    eleventyConfig.addPlugin(pluginPWA, {
+        cacheId: "your-app-id", // change this to your application id
+        globIgnores: [
+            // any files you don't want service worker to cache go here
+            "css/*.*",
+            "favicon/*.*",
+            "img/*.*",
+            "site.webmanifest",
+            "https://unpkg.com/dark-mode-toggle"
+        ],
+        runtimeCaching: [
+            {
+            // we always want fresh copy of the index page
+            urlPattern: /\/$/,
+            handler: "NetworkFirst",
+            },
+            {
+            // we also want fresh copies of any HTML page
+            urlPattern: /\.html$/,
+            handler: "NetworkFirst",
+            },
+            {
+            // we serve stale copies of static assets while they're refreshed
+            urlPattern:
+                /^.*\.(jpg|png|mp4|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
+            handler: "StaleWhileRevalidate",
+            },
+        ],
     });
 
     // Do not change the following lines, it is not necessary

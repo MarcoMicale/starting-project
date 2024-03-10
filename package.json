@@ -27,6 +27,7 @@
   "homepage": "https://github.com/MarcoMicale/starting-project#readme",
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "eleventy-plugin-pwa-v2": "^1.0.1",
     "html-minifier": "^4.0.0",
     "markdown-it": "^14.0.0",
     "markdown-it-attrs": "^4.1.6",
