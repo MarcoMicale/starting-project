@@ -4,8 +4,9 @@ A solid, pre-packaged 11ty starting point to speed up the creation process
 
 ## Cosa ho usato:
 
-- [Eleventy](https://github.com/11ty/eleventy)
+- [eleventy](https://github.com/11ty/eleventy)
 - [rimraf](https://github.com/isaacs/rimraf)
+- [typeit](https://github.com/alexmacarthur/typeit)
 
 ## Work in progress
 
